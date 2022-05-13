@@ -1,11 +1,24 @@
+
 import './App.css';
+import { Routes, Route } from "react-router-dom";
+import { isMatchAlgorithm } from './helpers/isMatchAlgorithm';
 
 function App() {
-  return (
-    <div className="App min-h-screen bg-gray-100">
-      <h1>Airhouse Frontend Word Matching App</h1>
-    </div>
 
+  let word = "abz"
+  let pattern = "a!z"
+
+  const TestMatch = () => (
+    <div>
+      <span className='block'>Word: {word}</span>
+      <span className='block'>Pattern: {pattern}</span>
+      {isMatchAlgorithm(pattern, word) ? "True" : "False"}
+    </div>
+  )
+  return (
+    <Routes>
+      <Route path="/" element={<TestMatch/>} />
+    </Routes>
   );
 }
 
