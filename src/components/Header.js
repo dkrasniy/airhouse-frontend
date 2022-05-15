@@ -22,9 +22,9 @@ export default function Header() {
     return (
         <header className='md:w-56 flex md:flex-col items-center md:items-start justify-between md:justify-start py-6 md:py-0'>
             <div className='flex items-center'>
-                <span className='font-bold py-2 text-2xl flex items-center dark:text-white select-none'>
+                <Link to={'/'} className='font-bold py-2 text-2xl flex items-center dark:text-white select-none'>
                     <Logo className="text-airhouse-500 dark:text-airhouse-400 w-8 h-8 mr-2" /> Air<span className='text-airhouse-500 dark:text-airhouse-400 '>Matcher</span>
-                </span>
+                </Link>
             </div>
             <div className='hidden md:block mt-8'>
                 <NavigationLinks />
@@ -35,7 +35,7 @@ export default function Header() {
                     <XIcon className={`w-10 h-10 p-2 transition absolute top-0 left-0 right-0 ml-auto mr-auto ${mobileMenuOpen ? 'scale-1 opacity-100' : 'scale-0 opacity-0'}`}/>
                 </button>
             </div> 
-            <div className={`w-80 fixed  h-screen top-0 right-0  bg-gradient-to-b from-white to-airhouse-50 z-10 flex shadow-lg pt-10 flex flex-col transform transition ease-in-out duration-500  ${mobileMenuOpen ? 'translate-x-0 opacity-100' : ' translate-x-full opacity-0'}`}>
+            <div className={`w-80 fixed h-screen top-0 right-0  bg-gradient-to-b from-white to-airhouse-50 z-10 flex shadow-lg pt-10 flex flex-col transform transition ease-in-out duration-500  ${mobileMenuOpen ? 'translate-x-0' : ' translate-x-full'}`}>
                 <span className='block px-6 font-bold mb-6 text-lg'>Navigation</span>
                 <NavigationLinks/>
             </div>
