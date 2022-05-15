@@ -27,10 +27,10 @@ export default function ViewWordsView() {
   return (
     <Layout>
       <PageLayout title={"View Words"}>
-        {words && words.length < 1 ? <WordListEmptyState /> : <div className='border-b mb-4 pb-4 border-gray-100'><h2 className='font-bold text-gray-600 md:text-lg '>List contains {words.length} word{words.length !== 1 ? 's' : ''}</h2>
+        {words && words.length < 1 ? <WordListEmptyState /> : <div className='border-b mb-4 pb-4 border-gray-100'><h2 className='font-bold text-gray-600 md:text-lg '>List contains {words && words.length} word{words && words.length !== 1 ? 's' : ''}</h2>
         <p className='text-gray-400'><Link to='/add' className='text-gray-400 transition ease duration-200 hover:text-airhouse-600'>Add more words</Link></p></div> }
         <motion.ul className='space-y-3' variants={container} initial="hidden" animate="visible">
-          {words.map(({ word, datetime }) => <motion.li key={datetime} variants={wordItem}>
+          {words && words.map(({ word, datetime }) => <motion.li key={datetime} variants={wordItem}>
             <Word word={word} id={datetime} allowDelete={true} deleteWord={deleteWord} />{word.datetime}</motion.li>)}
         </motion.ul>
       </PageLayout>
