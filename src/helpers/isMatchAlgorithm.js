@@ -5,11 +5,10 @@ export function isMatchAlgorithm(pattern, word) {
         for (let i = 0; i < pattern.length; i++) {
             // if not a * or !, exact letter better match
             if (pattern[i] !== '*' && pattern[i] !== '!') {
-               
                 if (word[i+j-s] !== pattern[i]) return false // if it characters do not match, return false
             }
             if(pattern[i] === '*'){ 
-              if(pattern[i+1] == word[i+j-s]) s++; // next letter in the pattern matches current letter in the word, * must be 0 chars
+              if(pattern[i+1] === word[i+j-s]) s++; // next letter in the pattern matches current letter in the word, * must be 0 chars
                  // add 1 to index to not count/check current index twice
                 while(word[i+j+1] === word[i]) j++; 
             }

@@ -1,4 +1,4 @@
-import React, { Children } from 'react'
+import React from 'react'
 import Header from './Header'
 
 export default function Layout(props) {
@@ -13,5 +13,4 @@ export default function Layout(props) {
         </div>
     )
 }
-
-{/* <div className='flex mx-auto max-w-5xl pt-12'></div> */ }
+ 
