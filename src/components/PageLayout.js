@@ -1,4 +1,5 @@
 import React from 'react' 
+import PropTypes from 'prop-types';
 
 export default function PageLayout({ title = "", children }) {
     return (
@@ -9,4 +10,10 @@ export default function PageLayout({ title = "", children }) {
         </>
 
     )
-}  
+} 
+PageLayout.propTypes = {
+    title: PropTypes.string
+}; 
+PageLayout.defaultProps = {
+    title: 'Page Title'
+};
